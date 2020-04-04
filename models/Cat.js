@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 
+// Borrar la colección nuevamente si no funciona y repite el create
+
 const {Schema} = mongoose;
 //you can use also
 //const Schema = mongoose.Schema

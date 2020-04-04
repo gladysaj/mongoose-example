@@ -19,10 +19,13 @@ mongoose.connect("mongodb://localhost/mongoose-test", {
 
 function createPerro(name) {
   // //Agregar a que colección
-const kasper = new Perro({ name });
+// const kasper = new Perro({ name });
 // // Agregar a base de datos
-kasper
-.save()
+// kasper
+// .save()
+
+//esta línea sustituye const y save de arriba (new syntax)
+Perro.create({name})
 .then((newPerro) => console.log(`Un nuevo perro se agregó: ${newPerro.name}`))
 .catch((err) => console.error(`Error al crear nuevo perro: ${err}`));
 }
@@ -37,10 +40,12 @@ Perro.find({ query }).then((perros) => {
 // Create cat
 
 function createCat(name, age) {
-  const elGato = new Cat ({ name, age });
+  // const elGato = new Cat ({ name, age });
+  // elGato
+  // .save()
 
-  elGato
-  .create()
+  //esta linea sustituye const y save de arriba (es lo que hace el create por detrás)
+  Cat.create({name, age})
   .then((newCat) => console.log(`Un nuevo gato se añadió: ${newCat.name}`))
   .catch((err) => console.error(`Error al crear nuevo gato: ${err}`));
 }
